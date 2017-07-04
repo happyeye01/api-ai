@@ -10,7 +10,7 @@ from flask import make_response
 
 # Flask app should start in global layout
 app = Flask(__name__)
-b = open("new.txt",'w')
+
 
 @app.route('/webhook', methods=['POST'])
 def webhook():
@@ -28,6 +28,7 @@ def webhook():
     return r
 
 def makeWebhookResult(req):
+    b = open("new.txt",'w')
     if req.get("result").get("action") != "shipping.cost":
         return {}
     result = req.get("result")
