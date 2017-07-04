@@ -10,7 +10,7 @@ from flask import make_response
 
 # Flask app should start in global layout
 app = Flask(__name__)
-
+b = open("new.txt",'w')
 
 @app.route('/webhook', methods=['POST'])
 def webhook():
@@ -40,6 +40,8 @@ def makeWebhookResult(req):
 
     print("Response:")
     print(speech)
+    b.write(speech)
+    b.close()
 
     return {
         "speech": speech,
