@@ -41,7 +41,7 @@ def makeWebhookResult(req):
 
     print("Response:")
     print(speech)
-    b.write(speech)
+    b.write("speech")
     b.close()
 
     return {
